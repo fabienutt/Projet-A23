@@ -1,0 +1,9 @@
+<h1> Index du blog boi</h1>
+<br>
+<h2>Liste des articles:</h2>
+<br>
+{% for article in articles %}
+    <h3><a href="article/{{ article.title }}">{{ article.title }}</a></h3>
+    <p>{{ article.author }}</p>
+    <br>
+{% endfor %}
