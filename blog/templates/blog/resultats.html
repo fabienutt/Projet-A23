@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultats</title>
+    <link rel="stylesheet" href="{% static 'css/spotify_style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Resultats</h1>
+        </header>
+        <section class="text">
+            <h2>Compte Rendu</h2>
+            <p>{{result}}</p>
+        </section>
+        <section class="text">
+            <h2>URDF</h2>
+            <p>Fenetre urdf ou code ou jsp</p>
+        </section>
+    </div>
+</body>
+
+</html>
