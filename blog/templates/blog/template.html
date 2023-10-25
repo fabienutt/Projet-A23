@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compartiment Exemple</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script>
+        function toggleCompartiment(id) {
+            const compartiment = document.getElementById(id);
+            if (compartiment.style.display === "none" || compartiment.style.display === "") {
+                compartiment.style.display = "block";
+            } else {
+                compartiment.style.display = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    
+    <button onclick="toggleCompartiment('compartiment')">Fonction du robot</button>
+    <div id="compartiment" style="display:none;">
+        <button onclick="toggleCompartiment('inspectionCompartiment')">Inspection</button>
+        <div id="inspectionCompartiment" style="display:none;">
+            {{ inspection_form.as_p }}
+        </div>
+
+        <button onclick="toggleCompartiment('transportCompartiment')">Transport</button>
+        <div id="transportCompartiment" style="display:none;">
+            {{ transport_form.as_p }}
+        </div>
+
+        <button onclick="toggleCompartiment('manipulationCompartiment')">Manipulation</button>
+        <div id="manipulationCompartiment" style="display:none;">
+            {{ manipulation_form.as_p }}
+        </div>
+    </div>
+
+</body>
+</html>

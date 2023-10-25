@@ -1,11 +1,11 @@
-{%load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire inspiré de Spotify</title>
+    <title>Formulaire</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
@@ -14,10 +14,14 @@
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
+        
+        
+            
+
             <button type="submit">Soumettre</button>
         </form>
     </div>
-    <h2> {{result}}</h2>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </body>
 
 </html>

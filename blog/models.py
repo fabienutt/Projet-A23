@@ -14,3 +14,4 @@ class Formulaire(models.Model):
     Texte = models.TextField()
     def __str__(self):
         return self.Texte
+
