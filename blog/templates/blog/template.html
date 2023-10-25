@@ -16,28 +16,63 @@
                 compartiment.style.display = "none";
             }
         }
+
+        function startRobotAnimation() {
+            const robotBtn = document.getElementById('robotBtn');
+            const effectDiv = document.getElementById('robotEffect');
+            const mainCompartiment = document.getElementById('compartiment');
+
+            robotBtn.style.display = "none"; // Cacher le bouton dès le début de l'animation
+            effectDiv.style.display = "block"; // Afficher "Chargement..."
+
+            setTimeout(() => {
+                effectDiv.style.display = "none"; // Cacher "Chargement..."
+                mainCompartiment.style.display = "block"; // Afficher le compartiment principal
+            }, 900); // Après 1 seconde
+        }
     </script>
 </head>
 
 <body>
-    
-    <button onclick="toggleCompartiment('compartiment')">Fonction du robot</button>
-    <div id="compartiment" style="display:none;">
-        <button onclick="toggleCompartiment('inspectionCompartiment')">Inspection</button>
-        <div id="inspectionCompartiment" style="display:none;">
-            {{ inspection_form.as_p }}
+    <div class="center-container">
+        <button id="robotBtn" onclick="startRobotAnimation()">Fonction du robot</button>
+        <div id="robotEffect" style="display:none;">
+            GENERO
         </div>
+        <div id="compartiment" style="display:none;">
+            <button onclick="toggleCompartiment('inspectionCompartiment')">Inspection</button>
+            <div id="inspectionCompartiment" style="display:none;">
+                {{ inspection_form.as_p }}
+                <style>
+                    button {
+                        margin: 20px;
+                    }
+                </style>
+            </div>
 
-        <button onclick="toggleCompartiment('transportCompartiment')">Transport</button>
-        <div id="transportCompartiment" style="display:none;">
-            {{ transport_form.as_p }}
-        </div>
+            <button onclick="toggleCompartiment('transportCompartiment')">Transport</button>
+            <div id="transportCompartiment" style="display:none;">
+                {{ transport_form.as_p }}
+                <style>
+                    button {
+                        margin: 20px;
+                    }
+                </style>
+                
+                
+            </div>
 
-        <button onclick="toggleCompartiment('manipulationCompartiment')">Manipulation</button>
-        <div id="manipulationCompartiment" style="display:none;">
-            {{ manipulation_form.as_p }}
+            <button onclick="toggleCompartiment('manipulationCompartiment')">Manipulation</button>
+            <div id="manipulationCompartiment" style="display:none;">
+                {{ manipulation_form.as_p }}
+                <style>
+                    button {
+                        margin: 20px;
+                    }
+                </style>
+            </div>
         </div>
     </div>
-
 </body>
+
 </html>
