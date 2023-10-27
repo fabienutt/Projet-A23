@@ -22,7 +22,7 @@ class InspectionForm(forms.Form):
 class TransportForm(forms.Form):
     type_vehicule = forms.ChoiceField(
         label="Milieu d'évolution",
-        choices=[('Terrestre', 'Terrestre'), ('Aquatique', 'Aquatique'), ('Aérien', 'Aérien')],
+        choices=[('Sélectionner','Sélectionner'),('Terrestre', 'Terrestre'), ('Aquatique', 'Aquatique'), ('Aérien', 'Aérien')],
         widget=forms.Select(attrs={'class': 'custom-select'})
     )
 class ManipulationForm(forms.Form):
@@ -36,6 +36,24 @@ class ManipulationForm(forms.Form):
 class TerrestreForm(forms.Form):
     type_vehicule = forms.ChoiceField(
         label="Type de déplacement",
-        choices=[('Roues', 'Roues'), ('Chenilles', 'Chenilles')],
+        choices=[('Sélectionner','Sélectionner'),('Roues', 'Roues'), ('Chenilles', 'Chenilles')],
         widget=forms.Select(attrs={'class': 'custom-select'})
     )
+
+class AquaForm(forms.Form):
+    type_vehicule = forms.ChoiceField(
+        label="Type de déplacement",
+        choices=[('Sélectionner','Sélectionner'),('Moulin', 'Moulin'), ('Hélices', 'Hélices')],
+        widget=forms.Select(attrs={'class': 'custom-select'})
+    )
+
+class AirForm(forms.Form):
+    type_vehicule = forms.ChoiceField(
+        label="Type de déplacement",
+        choices=[('Sélectionner','Sélectionner'),('Hélices', 'Hélices'), ('Planeur', 'Planeur')],
+        widget=forms.Select(attrs={'class': 'custom-select'})
+    )
+
+class ChoiceForm(forms.Form):
+    intsaisie=forms.IntegerField(min_value=0,label="Nombre ")
+    floatsaisie=forms.FloatField(min_value=0,label="Taille ")

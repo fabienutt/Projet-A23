@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Formulaire,Article
-from .forms import FormulaireForm,InspectionForm,TerrestreForm, ManipulationForm, TransportForm
+from .forms import *
 from .programs import traitement
 def blog_index(request):
     articles = Article.objects.all()
@@ -43,10 +43,18 @@ def my_view(request):
     transport_form = TransportForm()
     manipulation_form = ManipulationForm()
     terr_form=TerrestreForm()
+    air_form=AirForm()
+    aqua_form=AquaForm()
+    choice_form=ChoiceForm()
     context = {
         'inspection_form': inspection_form,
         'transport_form': transport_form,
         'manipulation_form': manipulation_form,
+        'terrestre_form': terr_form,
+        'air_form': air_form,
+        'aqua_form': aqua_form,
+        'choice_form': choice_form,
     }
 
     return render(request, 'blog/template.html', context)
+
