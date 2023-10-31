@@ -1,31 +1,58 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const typeVehiculeSelect = document.getElementById('id_type_vehicule'); // Remplacez 'id_type_vehicule' par l'ID réel si différent
+    const typeVehiculeSelect = document.getElementById('id_type_vehicule');
+
+    const terrestreDiv = document.getElementById('terrestreDiv');
+    const airDiv = document.getElementById('airDiv');
+    const aquaDiv = document.getElementById('aquaDiv');
+    const deplacementDiv = document.getElementById('deplacementDiv');
+    
+    function showDeplacementDiv() {
+        deplacementDiv.style.display = 'block';
+    }
+
+    function hideDeplacementDiv() {
+        deplacementDiv.style.display = 'none';
+    }
+
+    function resetAllDivs() {
+        terrestreDiv.style.display = 'none';
+        airDiv.style.display = 'none';
+        aquaDiv.style.display = 'none';
+        hideDeplacementDiv();
+    }
+
+    terrestreDiv.addEventListener('change', showDeplacementDiv);
+// IMPORTANT : TROUVER UN MOYEN DE CACHER DEPLACEMENTDIV LORSQUE LON SELECTIONNE PLANEUR 
+//             APRES AVOIR SELECTIONNE HELICES
+    airDiv.addEventListener('change', function(){
+        if (this.value !== 'Planeur') {
+            showDeplacementDiv();
+        } else {
+            hideDeplacementDiv();
+        }
+    });
+
+    aquaDiv.addEventListener('change', showDeplacementDiv);
 
     typeVehiculeSelect.addEventListener('change', function() {
-        const terrestreDiv = document.getElementById('terrestreDiv');
-        const airDiv = document.getElementById('airDiv');
-        const aquaDiv = document.getElementById('aquaDiv');
-        const deplacementDiv = document.getElementById('deplacementDiv');
+        resetAllDivs();
         
-
-        if (this.value === 'Terrestre') {
-            terrestreDiv.style.display = 'block'; // Afficher le formulaire terrestre
-        } else {
-            terrestreDiv.style.display = 'none'; // Masquer le formulaire terrestre
+        switch (this.value) {
+            case 'Terrestre':
+                terrestreDiv.style.display = 'block';
+                break;
+            case 'Aquatique':
+                aquaDiv.style.display = 'block';
+                break;
+            case 'Aérien':
+                airDiv.style.display = 'block';
+                break;
         }
-        if (this.value === 'Aquatique') {
-            aquaDiv.style.display = 'block'; // Afficher le formulaire terrestre
-        } else {
-            aquaDiv.style.display = 'none'; // Masquer le formulaire terrestre
-        }
-        if (this.value === 'Aérien') {
-            airDiv.style.display = 'block'; // Afficher le formulaire terrestre
-        } else {
-            airDiv.style.display = 'none'; // Masquer le formulaire terrestre
-        }
-        
     });
 });
+
+
+
 
 function toggleCompartiment(id) {
     const compartiment = document.getElementById(id);

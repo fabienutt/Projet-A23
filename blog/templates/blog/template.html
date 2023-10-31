@@ -7,64 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compartiment Exemple</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        button {
+            margin: 20px;
+        }
+    </style>
     <script src="{% static 'Js/script.js' %}"></script>
-    
 </head>
 
 <body>
-    <div class="center-container">
-        <button id="robotBtn" onclick="startRobotAnimation()">Fonction du robot</button>
-        <div id="robotEffect" style="display:none;">
-            GENERO
-        </div>
-        
-        <div id="compartiment" style="display:none;">
-            <button onclick="toggleCompartiment('inspectionCompartiment')">Inspection</button>
-            <div id="inspectionCompartiment" style="display:none;">
-                {{ inspection_form.as_p }}
-                <style>
-                    button {
-                        margin: 20px;
-                    }
-                </style>
+    <form method="post" action="" novalidate>
+        {% csrf_token %}
+        <div class="center-container">
+            <button type="button" id="robotBtn" onclick="startRobotAnimation()">Fonction du robot</button>
+            <div id="robotEffect" style="display:none;">
+                GENERO
             </div>
 
-            <button onclick="toggleCompartiment('transportCompartiment')">Transport</button>
-            <div id="transportCompartiment" style="display:none;">
-                
-                <style>
-                    button {
-                        margin: 20px;
-                    }
-                </style>
-                {{ transport_form.as_p }} 
+            <div id="compartiment" style="display:none;">
+                <button type="button" onclick="toggleCompartiment('inspectionCompartiment')">Inspection</button>
+                <div id="inspectionCompartiment" style="display:none;">
+                    {{ inspection_form.as_p }}
+                </div>
 
-                <div id="terrestreDiv" style="display: none;">
-                    {{ terrestre_form.as_p }}
-                </div>
-                <div id="aquaDiv" style="display: none;">
-                    {{ aqua_form.as_p }}
-                </div>
-                <div id="airDiv" style="display: none;">
-                    {{ air_form.as_p }}
-                </div>
-                <div id="deplacementDiv" style="display: none;">
-                    {{ choice_form.as_p }}
-                </div>
-            </div>
+                <button type="button" onclick="toggleCompartiment('transportCompartiment')">Transport</button>
+                <div id="transportCompartiment" style="display:none;">
+                    {{ transport_form.as_p }} 
 
-            <button onclick="toggleCompartiment('manipulationCompartiment')">Manipulation</button>
-            <div id="manipulationCompartiment" style="display:none;">
-                {{ manipulation_form.as_p }}
-                <style>
-                    button {
-                        margin: 20px;
-                    }
-                </style>
+                    <div id="terrestreDiv" style="display: none;">
+                        {{ terrestre_form.as_p }}
+                    </div>
+                    <div id="aquaDiv" style="display: none;">
+                        {{ aqua_form.as_p }}
+                    </div>
+                    <div id="airDiv" style="display: none;">
+                        {{ air_form.as_p }}
+                    </div>
+                    <div id="deplacementDiv" style="display: none;">
+                        {{ choice_form.as_p }}
+                    </div>
+                </div>
+
+                <button type="button" onclick="toggleCompartiment('manipulationCompartiment')">Manipulation</button>
+                <div id="manipulationCompartiment" style="display:none;">
+                    {{ manipulation_form.as_p }}
+                </div>
             </div>
         </div>
-    </div>
-
+        <button type="submit" class="submit-button">Valider les choix</button>
+    </form>
 </body>
 
 </html>

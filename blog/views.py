@@ -2,6 +2,8 @@ from django.shortcuts import render,redirect
 from .models import Formulaire,Article
 from .forms import *
 from .programs import traitement
+import pandas as pd
+import json
 def blog_index(request):
     articles = Article.objects.all()
     data = {'articles': articles}
@@ -39,13 +41,45 @@ def resultats(request):
 
 
 def my_view(request):
-    inspection_form = InspectionForm()
-    transport_form = TransportForm()
-    manipulation_form = ManipulationForm()
-    terr_form=TerrestreForm()
-    air_form=AirForm()
-    aqua_form=AquaForm()
-    choice_form=ChoiceForm()
+    if request.method == 'POST':
+        inspection_form = InspectionForm(request.POST)
+        transport_form = TransportForm(request.POST)
+        manipulation_form = ManipulationForm(request.POST)
+        terr_form = TerrestreForm(request.POST)
+        air_form = AirForm(request.POST)
+        aqua_form = AquaForm(request.POST)
+        choice_form = ChoiceForm(request.POST)
+        
+        inspection_data = get_form_data_or_default(inspection_form, {'content': ''})
+        transport_data = get_form_data_or_default(transport_form, {})
+        manipulation_data = get_form_data_or_default(manipulation_form, {'content': ''})
+        terr_data = get_form_data_or_default(terr_form, {})
+        air_data = get_form_data_or_default(air_form, {})
+        aqua_data = get_form_data_or_default(aqua_form, {})
+        choice_data = get_form_data_or_default(choice_form, {'intsaisie': 0, 'floatsaisie': 0.0})
+
+        data = {
+            'inspection_form': inspection_data,
+            'transport_form': transport_data,
+            'manipulation_form': manipulation_data,
+            'terrestre_form': terr_data,
+            'air_form': air_data,
+            'aqua_form': aqua_data,
+            'choice_form': choice_data,
+        }
+        with open('blog/programs/data.json', 'w') as file:
+            json.dump(data, file, ensure_ascii=False, indent=4)
+        return redirect('confirmation')
+            
+    else:
+        inspection_form = InspectionForm()
+        transport_form = TransportForm()
+        manipulation_form = ManipulationForm()
+        terr_form = TerrestreForm()
+        air_form = AirForm()
+        aqua_form = AquaForm()
+        choice_form = ChoiceForm()
+
     context = {
         'inspection_form': inspection_form,
         'transport_form': transport_form,
@@ -55,6 +89,18 @@ def my_view(request):
         'aqua_form': aqua_form,
         'choice_form': choice_form,
     }
-
+    
     return render(request, 'blog/template.html', context)
 
+def confirmation(request):
+    return render(request, 'blog/confirmation.html')
+
+def get_form_data_or_default(form, default_values):
+    """
+    Retourne les données nettoyées du formulaire si elles sont valides,
+    sinon, retourne les valeurs par défaut fournies.
+    """
+    if form.is_valid():
+        return form.cleaned_data
+    else:
+        return default_values

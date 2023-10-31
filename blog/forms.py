@@ -15,18 +15,21 @@ from django import forms
 class InspectionForm(forms.Form):
     content = forms.CharField(
         label="Description de l'inspection ",
-        widget=forms.Textarea(attrs={'rows': 10, 'cols': 50, 'class': 'custom-textarea'}))
+        widget=forms.Textarea(attrs={'rows': 10, 'cols': 50, 'class': 'custom-textarea'}),
+        required=False)
     class Meta:
         model = Formulaire
         fields = ['content']
 class TransportForm(forms.Form):
     type_vehicule = forms.ChoiceField(
+        required=False,
         label="Milieu d'évolution",
         choices=[('Sélectionner','Sélectionner'),('Terrestre', 'Terrestre'), ('Aquatique', 'Aquatique'), ('Aérien', 'Aérien')],
         widget=forms.Select(attrs={'class': 'custom-select'})
     )
 class ManipulationForm(forms.Form):
     content = forms.CharField(
+        required=False,
         label='Description de la manipulation ',
         widget=forms.Textarea(attrs={'rows': 10, 'cols': 50, 'class': 'custom-textarea'}))
     class Meta:
@@ -35,6 +38,7 @@ class ManipulationForm(forms.Form):
 
 class TerrestreForm(forms.Form):
     type_vehicule = forms.ChoiceField(
+        required=False,
         label="Type de déplacement",
         choices=[('Sélectionner','Sélectionner'),('Roues', 'Roues'), ('Chenilles', 'Chenilles')],
         widget=forms.Select(attrs={'class': 'custom-select'})
@@ -42,6 +46,7 @@ class TerrestreForm(forms.Form):
 
 class AquaForm(forms.Form):
     type_vehicule = forms.ChoiceField(
+        required=False,
         label="Type de déplacement",
         choices=[('Sélectionner','Sélectionner'),('Moulin', 'Moulin'), ('Hélices', 'Hélices')],
         widget=forms.Select(attrs={'class': 'custom-select'})

@@ -1,0 +1,24 @@
+{
+    "inspection_form": {
+        "content": ""
+    },
+    "transport_form": {
+        "type_vehicule": "Sélectionner"
+    },
+    "manipulation_form": {
+        "content": ""
+    },
+    "terrestre_form": {
+        "type_vehicule": "Sélectionner"
+    },
+    "air_form": {
+        "type_vehicule": "Sélectionner"
+    },
+    "aqua_form": {
+        "type_vehicule": "Sélectionner"
+    },
+    "choice_form": {
+        "intsaisie": 2,
+        "floatsaisie": 1.0
+    }
+}
