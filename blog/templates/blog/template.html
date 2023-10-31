@@ -23,8 +23,9 @@
             <div id="robotEffect" style="display:none;">
                 GENERO
             </div>
-
+            
             <div id="compartiment" style="display:none;">
+                
                 <button type="button" onclick="toggleCompartiment('inspectionCompartiment')">Inspection</button>
                 <div id="inspectionCompartiment" style="display:none;">
                     {{ inspection_form.as_p }}
@@ -48,13 +49,15 @@
                     </div>
                 </div>
 
-                <button type="button" onclick="toggleCompartiment('manipulationCompartiment')">Manipulation</button>
+                <button type="button" onclick="toggleCompartiment('manipulationCompartiment')" style="display: block; margin-left: auto; margin-right: auto;">Manipulation</button>
+
                 <div id="manipulationCompartiment" style="display:none;">
                     {{ manipulation_form.as_p }}
                 </div>
+                <button type="submit" class="submit-button">Valider les choix</button>
             </div>
         </div>
-        <button type="submit" class="submit-button">Valider les choix</button>
+        
     </form>
 </body>
 

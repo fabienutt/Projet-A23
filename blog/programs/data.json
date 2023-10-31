@@ -18,7 +18,7 @@
         "type_vehicule": "Sélectionner"
     },
     "choice_form": {
-        "intsaisie": 2,
-        "floatsaisie": 1.0
+        "intsaisie": 0,
+        "floatsaisie": 0.0
     }
 }
