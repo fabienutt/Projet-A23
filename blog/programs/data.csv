@@ -1,0 +1,194 @@
+colonne_texte,Camera_RGB,Camera_Infrarouge,Camera_Thermique,Camera_Profondeur,Capteurs_Ultrasons,LED,Laser_Telemetre
+Je veux un robot qui inspecte des tables,1,0,0,0,0,0,0
+Le robot devra pouvoir voir un intru dans l'obscurité,0,1,0,0,0,0,0
+Le robot devra détecter de la chaleur,0,0,1,0,0,0,0
+Le robot devra inspecter des bâtiments la nuit,1,0,0,0,0,1,0
+Le robot devra pouvoir mesurer une distance,0,0,0,0,0,0,1
+Le robot devra connaitre la position d'une objet qu'il voit,0,0,0,1,0,0,0
+Le robot devra vérifier l'état d'une porte,1,0,0,0,0,1,0
+Un robot qui inspecte l'intérieur d'un tuyaux,1,0,0,0,0,1,0
+Détection d'obstacles pour un robot aspirateur,0,0,0,0,1,0,0
+Mesure de distance pour un bras robotique,0,0,0,0,1,0,0
+Navigation de drones dans des zones encombrées,0,0,0,0,1,0,0
+Suivi de mouvement dans des systèmes de sécurité,0,0,0,0,1,0,0
+Détermination de niveaux de liquides dans des réservoirs,0,0,0,0,1,0,0
+Aide au stationnement pour des véhicules autonomes,0,0,0,0,1,0,0
+Cartographie de l'environnement pour un robot mobile,0,0,0,1,1,0,0
+Évitement de collisions pour un robot de livraison,0,0,0,1,1,0,0
+Mesure de la hauteur d'objets sur une chaîne de production,0,0,0,1,1,0,0
+Suivi de personnes pour un robot guide dans un musée,0,0,0,1,1,0,0
+Surveillance de la chaleur pour un robot pompier,0,0,1,0,0,0,0
+Contrôle de température pour un robot cuisinier,0,0,1,0,0,0,0
+Mesure de la température corporelle pour un robot infirmier,0,0,1,0,0,0,0
+Surveillance de zones chaudes pour un drone volcanologue,0,0,1,0,0,0,0
+Ajustement du chauffage pour un robot domestique.,0,0,1,0,0,0,0
+"Détection de surchauffe pour un robot industriel.
+",0,0,1,0,0,0,0
+"Mesure de température pour un robot météorologue.
+",0,0,1,0,0,0,0
+"Contrôle de la température pour un robot de soudage.
+",0,0,1,0,0,0,0
+"Surveillance de frigo pour un robot d'inventaire.
+",0,0,1,0,0,0,0
+"Suivi des changements thermiques pour un robot de recherche.
+
+
+
+",0,0,1,0,0,0,0
+"Identification de fruits mûrs pour un robot agricole.
+",1,0,0,0,0,0,0
+"Reconnaissance faciale pour un robot de sécurité.
+",1,0,0,0,0,0,0
+"Suivi de cibles pour un drone de livraison.
+",1,0,0,0,0,0,0
+"Cartographie 3D d'une pièce pour un robot d'intérieur.
+",0,0,0,1,0,0,0
+"Navigation pour un robot aspirateur en visualisant l'espace.
+",0,0,0,1,0,0,0
+"Contrôle de qualité pour un robot de chaîne de production.
+",1,0,0,0,0,0,0
+"Détection de défauts pour un robot inspecteur de routes.
+",1,0,0,0,0,0,0
+"Analyse de scènes pour un robot cinéaste.
+",1,0,0,0,0,0,0
+"Aide à la chirurgie pour un robot médical.
+",1,0,0,0,0,0,0
+"Tutorat interactif pour un robot enseignant en visualisant l'élève.
+
+
+
+",1,0,0,0,0,0,0
+"Cartographie 3D pour un robot d'exploration.
+",0,0,0,1,0,0,0
+"Aide à la navigation pour un robot aspirateur.
+",0,0,0,1,0,0,0
+"Reconnaissance d'objets en relief pour un bras robotique.
+",0,0,0,1,0,0,0
+"Suivi de mouvements en 3D pour un robot d'interaction humaine.
+",0,0,0,1,0,0,0
+"Mesure de volumes pour un robot logistique.
+",0,0,0,1,0,0,0
+"Détection d'obstacles en hauteur pour un drone.
+",0,0,0,1,0,0,0
+"Évaluation de la distance pour un robot de stationnement.
+",0,0,0,1,0,0,0
+"Modélisation d'espaces intérieurs pour un robot architecte.
+",0,0,0,1,0,0,0
+"Évaluation de la profondeur pour un robot plongeur en eaux troubles.
+
+
+
+",0,0,0,1,0,0,0
+"Assistance aux personnes malvoyantes en identifiant des obstacles.
+",0,0,0,1,0,0,0
+"Détection de défauts structuraux pour un robot inspecteur de bâtiments.
+",0,0,0,1,0,0,0
+"Mesure de l'épaisseur de la neige pour un robot météorologue.
+",0,0,0,1,0,0,0
+"Assistance à la chirurgie en visualisant des structures en 3D.
+",0,0,0,1,0,0,0
+"Évaluation des terrains accidentés pour un robot géologue.
+",0,0,0,1,0,0,0
+"Reproduction de sculptures pour un robot artisan.
+",0,0,0,1,0,0,0
+"Surveillance de zones sous-marines en évaluant le relief.
+",0,0,0,1,0,0,0
+"Modélisation de visages pour un robot coiffeur.
+",0,0,0,1,0,0,0
+"Mesure d'espaces confinés pour un robot spéléologue.
+",0,0,0,1,0,0,0
+"Modélisation de sites archéologiques pour un robot historien.
+",0,0,0,1,0,0,0
+"Évaluation de la profondeur d'une piscine pour un robot sauveteur.
+",0,0,0,1,0,0,0
+"Navigation dans des grottes obscures pour un robot explorateur.
+",0,0,0,1,0,1,0
+"Mesure de la topographie pour un robot paysagiste.
+",0,0,0,1,0,0,0
+"Évaluation des dégâts après une catastrophe naturelle.
+",0,0,0,1,0,0,0
+"Conception d'espaces virtuels pour un robot de réalité virtuelle.
+
+
+
+",0,0,0,1,0,0,0
+"Navigation dans des environnements sombres ou nocturnes.
+",0,0,0,0,0,1,0
+"Signalisation de son état ou de ses intentions aux humains.
+",0,0,0,0,0,1,0
+"Assistance à la chirurgie pour éclairer la zone opératoire.
+",0,0,0,0,0,1,0
+"Inspection de tuyaux ou de cavités sombres.
+",0,0,0,0,0,1,0
+"Éclairage de scènes pour un robot photographe.
+",0,0,0,0,0,1,0
+"Indication de direction pour un robot guide.
+",0,0,0,0,0,1,0
+"Éclairage sous-marin pour un robot plongeur.
+",0,0,0,0,0,1,0
+"Lecture de codes-barres ou QR codes dans des zones mal éclairées.
+",0,0,0,0,0,1,0
+"Éclairage de scènes pour un robot cinéaste.
+",0,0,0,0,0,1,0
+"Communication avec d'autres robots via des signaux lumineux.
+",0,0,0,0,0,1,0
+"Mise en évidence de défauts dans des matériaux lors d'inspections.
+",0,0,0,0,0,1,0
+"Éclairage d'étagères pour un robot de stockage en entrepôt.
+",0,0,0,0,0,1,0
+"Signalisation d'alerte en cas de danger ou de problème.
+",0,0,0,0,0,1,0
+"Indication de niveau de batterie ou de charge.
+",0,0,0,0,0,1,0
+"Signalisation pour un robot de circulation ou un drone.
+",0,0,0,0,0,1,0
+"Marquage de zones pour un robot de peinture.
+",0,0,0,0,0,1,0
+"Éclairage pour un robot d'exploration de grottes.
+",0,0,0,0,0,1,0
+"Indication de mode ou de fonction pour les utilisateurs.
+",0,0,0,0,0,1,0
+"Sécurité pour un robot patrouilleur en montrant sa présence.
+",0,0,0,0,0,1,0
+"Éclairage pour un robot d'entretien nocturne de routes.
+",0,0,0,0,0,1,0
+"Mise en évidence de détails pour un robot archéologue.
+",0,0,0,0,0,1,0
+"Signalisation d'état pour un robot serveur dans un restaurant.
+
+
+
+",0,0,0,0,0,1,0
+"Mesure précise de distances pour la navigation.
+",0,0,0,0,0,0,1
+"Cartographie d'environnements pour un robot d'exploration.
+",0,0,0,0,0,0,1
+"Détection d'obstacles à grande distance pour un drone.
+",0,0,0,0,0,0,1
+"Mesure de profondeur pour un robot foreur.
+",0,0,0,0,0,0,1
+"Surveillance de périmètre pour un robot de sécurité.
+",0,0,0,0,0,0,1
+"Mesure de l'épaisseur des glaces pour un robot polaire.
+",0,0,0,0,0,0,1
+"Aide à l'alignement pour un robot constructeur.
+",0,0,0,0,0,0,1
+"Suivi de la trajectoire d'objets mobiles.
+",0,0,0,0,0,0,1
+"Mesure de la longueur de câbles ou de tuyaux.
+",0,0,0,0,0,0,1
+"Évaluation de la hauteur d'eau pour un robot hydrologique.
+",0,0,0,0,0,0,1
+"Mesure des dimensions d'une pièce pour un robot architecte.
+",0,0,0,0,0,0,1
+"Détection de fissures ou déformations pour un robot inspecteur.
+",0,0,0,0,0,0,1
+"Calcul de l'espacement pour un robot planteur.
+",0,0,0,0,0,0,1
+"Mesure de l'éloignement des parois pour un robot spéléologue.
+",0,0,0,0,0,0,1
+"Aide à la détection d'objets en mouvement pour un robot sportif.
+
+
+
+",0,0,0,0,0,0,1

@@ -52,6 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Votre code existant ici pour la logique de formulaire
+    
+    // Afficher robotEffect immédiatement au chargement de la page
+    document.getElementById('robotEffect').style.display = 'block';
+
+    // Autre code JavaScript pour les écouteurs d'événements et fonctions
+});
 
 
 function toggleCompartiment(id) {
@@ -75,4 +83,17 @@ function startRobotAnimation() {
         effectDiv.style.display = "none"; // Cacher "Chargement..."
         mainCompartiment.style.display = "block"; // Afficher le compartiment principal
     }, 900); // Après 1 seconde
+}
+
+
+
+document.getElementById('submitAll').addEventListener('click', function() {
+    submitForm('formInspection');
+    submitForm('formTransport');
+    submitForm('formManipulation');
+});
+
+function submitForm(formId) {
+    const form = document.getElementById(formId);
+    form.submit(); // Cette commande soumet le formulaire
 }

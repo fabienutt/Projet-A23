@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0a0f0d;
+    color: #d1e8e2;
+    line-height: 1.6;
+}
+
+.center-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #123832;
+    border: 3px solid #1f6f59;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+h1, h2 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4ad9d9;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.75em;
+    padding: 5px;
+    background-color: #1f6f59;
+    border-radius: 5px;
+}
+
+.compartiment {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #1f6f59;
+    border-radius: 5px;
+}
+
+#robotEffect {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #4ad9d9;
+}
+
+form {
+    margin-top: 10px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 1.2em;
+    background-color: #27a69a;
+    color: #0a0f0d;
+    border: 2px solid #1f6f59;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1f6f59;
+}
+
+.custom-textarea, .custom-select {
+    border: 1px solid #1f6f59;
+    background-color: #123832;
+    border-radius: 4px;
+    margin: 10px 0;
+    padding: 10px;
+    width: calc(100% - 22px);
+    color: #d1e8e2;
+    box-sizing: border-box;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.custom-textarea:focus, .custom-select:focus {
+    border-color: #4ad9d9;
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .center-container {
+        width: 90%;
+        padding: 10px;
+    }
+}
+.glitch {
+    position: relative;
+    color: #0f0;
+    background-color: #000;
+    font-size: 3em;
+    letter-spacing: .5em;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+  }
+  
+  @keyframes glitch-skew {
+    0% {
+      transform: skew(10deg);
+    }
+    10% {
+      transform: skew(-10deg);
+    }
+    20% {
+      transform: skew(10deg);
+    }
+    30% {
+      transform: none;
+    }
+    100% {
+      transform: none;
+    }
+  }
+  
+  .glitch::after {
+    content: 'GENERO';
+    position: absolute;
+    left: 2px;
+    text-shadow: -2px 0 red;
+    top: 0;
+    color: #0f0;
+    background-color: #000;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+  }
+  
+  @keyframes glitch-anim {
+    2%,64% {
+      clip: rect(85px, 9999px, 14px, 0);
+      transform: skew(0.41deg);
+    }
+    4%,60% {
+      clip: rect(33px, 9999px, 30px, 0);
+      transform: skew(0.41deg);
+    }
+    62% {
+      clip: rect(33px, 9999px, 95px, 0);
+      transform: skew(5deg);
+    }
+  }
+  

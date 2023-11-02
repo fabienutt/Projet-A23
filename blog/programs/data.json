@@ -1,12 +1,12 @@
 {
     "inspection_form": {
-        "content": ""
+        "content": "aucune"
     },
     "transport_form": {
         "type_vehicule": "Sélectionner"
     },
     "manipulation_form": {
-        "content": ""
+        "content": "aucune"
     },
     "terrestre_form": {
         "type_vehicule": "Sélectionner"
@@ -18,7 +18,7 @@
         "type_vehicule": "Sélectionner"
     },
     "choice_form": {
-        "intsaisie": 0,
-        "floatsaisie": 0.0
+        "intsaisie": 4,
+        "floatsaisie": 5.0
     }
 }

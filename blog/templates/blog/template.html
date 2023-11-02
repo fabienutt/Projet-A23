@@ -1,64 +1,61 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compartiment Exemple</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <style>
-        button {
-            margin: 20px;
-        }
-    </style>
-    <script src="{% static 'Js/script.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
 </head>
-
 <body>
-    <form method="post" action="" novalidate>
-        {% csrf_token %}
-        <div class="center-container">
-            <button type="button" id="robotBtn" onclick="startRobotAnimation()">Fonction du robot</button>
-            <div id="robotEffect" style="display:none;">
-                GENERO
+    <div class="center-container">
+        <h1>Fonction du robot</h1>
+        <div id="robotEffect" class="glitch" style="display:none;">GENERO</div>
+        <script>
+            window.onload = function() {
+              var glitchEffect = document.getElementById('robotEffect');
+              glitchEffect.style.display = 'block'; // Show the glitch effect
+              
+              // Hide the glitch effect after 3 seconds
+              setTimeout(function() {
+                glitchEffect.style.display = 'none';
+              }, 3000);
+            };
+            </script>
+            
+        
+        <form id="globalForm" method="post" action="">
+            {% csrf_token %}
+            <div class="compartiment">
+                <h2>Inspection</h2>
+                {{ inspection_form.as_p }}
+            </div>
+
+            <div class="compartiment">
+                <h2>Transport</h2>
+                {{ transport_form.as_p }}
+                <div id="terrestreDiv" style="display: none;">
+                    {{ terrestre_form.as_p }}
+                </div>
+                <div id="aquaDiv" style="display: none;">
+                    {{ aqua_form.as_p }}
+                </div>
+                <div id="airDiv" style="display: none;">
+                    {{ air_form.as_p }}
+                </div>
+                <div id="deplacementDiv" style="display: none;">
+                    {{ choice_form.as_p }}
+                </div>
+            </div>
+
+            <div class="compartiment">
+                <h2>Manipulation</h2>
+                {{ manipulation_form.as_p }}
             </div>
             
-            <div id="compartiment" style="display:none;">
-                
-                <button type="button" onclick="toggleCompartiment('inspectionCompartiment')">Inspection</button>
-                <div id="inspectionCompartiment" style="display:none;">
-                    {{ inspection_form.as_p }}
-                </div>
-
-                <button type="button" onclick="toggleCompartiment('transportCompartiment')">Transport</button>
-                <div id="transportCompartiment" style="display:none;">
-                    {{ transport_form.as_p }} 
-
-                    <div id="terrestreDiv" style="display: none;">
-                        {{ terrestre_form.as_p }}
-                    </div>
-                    <div id="aquaDiv" style="display: none;">
-                        {{ aqua_form.as_p }}
-                    </div>
-                    <div id="airDiv" style="display: none;">
-                        {{ air_form.as_p }}
-                    </div>
-                    <div id="deplacementDiv" style="display: none;">
-                        {{ choice_form.as_p }}
-                    </div>
-                </div>
-
-                <button type="button" onclick="toggleCompartiment('manipulationCompartiment')" style="display: block; margin-left: auto; margin-right: auto;">Manipulation</button>
-
-                <div id="manipulationCompartiment" style="display:none;">
-                    {{ manipulation_form.as_p }}
-                </div>
-                <button type="submit" class="submit-button">Valider les choix</button>
-            </div>
-        </div>
-        
-    </form>
+            <button id="submitAll" type="submit">Soumettre tous les formulaires</button>
+        </form>
+    </div>
 </body>
-
 </html>

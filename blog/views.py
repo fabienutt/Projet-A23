@@ -25,7 +25,7 @@ def new_view(request):
         if form.is_valid():
             
             submitted_text = form.cleaned_data['content']
-            result = traitement.process_data(submitted_text)
+            #result = traitement.process_data(submitted_text)
             request.session['processed_data'] = result  # Stockage du résultat dans la session
             form.save()
             return redirect('resultats')
@@ -41,14 +41,30 @@ def resultats(request):
 
 
 def my_view(request):
+    inspection_form = InspectionForm()
+    transport_form = TransportForm()
+    manipulation_form = ManipulationForm()
+    terr_form = TerrestreForm()
+    air_form = AirForm()
+    aqua_form = AquaForm()
+    choice_form = ChoiceForm()
+    context = {
+        'inspection_form': inspection_form,
+        'transport_form': transport_form,
+        'manipulation_form': manipulation_form,
+        'terrestre_form': terr_form,
+        'air_form': air_form,
+        'aqua_form': aqua_form,
+        'choice_form': choice_form,
+    }
     if request.method == 'POST':
-        inspection_form = InspectionForm(request.POST)
-        transport_form = TransportForm(request.POST)
-        manipulation_form = ManipulationForm(request.POST)
-        terr_form = TerrestreForm(request.POST)
-        air_form = AirForm(request.POST)
-        aqua_form = AquaForm(request.POST)
-        choice_form = ChoiceForm(request.POST)
+        inspection_form = InspectionForm(request.POST or None)
+        transport_form = TransportForm(request.POST or None)
+        manipulation_form = ManipulationForm(request.POST or None)
+        terr_form = TerrestreForm(request.POST or None)
+        air_form = AirForm(request.POST or None)
+        aqua_form = AquaForm(request.POST or None)
+        choice_form = ChoiceForm(request.POST or None)
         
         inspection_data = get_form_data_or_default(inspection_form, {'content': ''})
         transport_data = get_form_data_or_default(transport_form, {})
@@ -67,33 +83,23 @@ def my_view(request):
             'aqua_form': aqua_data,
             'choice_form': choice_data,
         }
+        
         with open('blog/programs/data.json', 'w') as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
-        return redirect('confirmation')
-            
+        request.session['data'] = str(data['inspection_form'])
+        print(str(data['inspection_form']))
+        return redirect('confirmation') 
     else:
-        inspection_form = InspectionForm()
-        transport_form = TransportForm()
-        manipulation_form = ManipulationForm()
-        terr_form = TerrestreForm()
-        air_form = AirForm()
-        aqua_form = AquaForm()
-        choice_form = ChoiceForm()
-
-    context = {
-        'inspection_form': inspection_form,
-        'transport_form': transport_form,
-        'manipulation_form': manipulation_form,
-        'terrestre_form': terr_form,
-        'air_form': air_form,
-        'aqua_form': aqua_form,
-        'choice_form': choice_form,
-    }
-    
-    return render(request, 'blog/template.html', context)
+        
+        return render(request, 'blog/template.html', context)
 
 def confirmation(request):
-    return render(request, 'blog/confirmation.html')
+    result = request.session.get('data', '')
+    final=traitement.process_data(result)
+    return render(request, 'blog/confirmation.html',{'result':final})
+
+
+
 
 def get_form_data_or_default(form, default_values):
     """
@@ -101,6 +107,7 @@ def get_form_data_or_default(form, default_values):
     sinon, retourne les valeurs par défaut fournies.
     """
     if form.is_valid():
+
         return form.cleaned_data
     else:
         return default_values

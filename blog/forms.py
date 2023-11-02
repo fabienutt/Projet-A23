@@ -4,22 +4,21 @@ from .models import Formulaire
 
 class FormulaireForm(forms.ModelForm):
     content = forms.CharField(
+        required=False,
         label='Description de votre robot ',
         widget=forms.Textarea(attrs={'rows': 10, 'cols': 50}))
     class Meta:
         model = Formulaire
         fields = ['content']
 
-from django import forms
+
 
 class InspectionForm(forms.Form):
     content = forms.CharField(
         label="Description de l'inspection ",
         widget=forms.Textarea(attrs={'rows': 10, 'cols': 50, 'class': 'custom-textarea'}),
         required=False)
-    class Meta:
-        model = Formulaire
-        fields = ['content']
+    
 class TransportForm(forms.Form):
     type_vehicule = forms.ChoiceField(
         required=False,
@@ -32,9 +31,7 @@ class ManipulationForm(forms.Form):
         required=False,
         label='Description de la manipulation ',
         widget=forms.Textarea(attrs={'rows': 10, 'cols': 50, 'class': 'custom-textarea'}))
-    class Meta:
-        model = Formulaire
-        fields = ['content']
+    
 
 class TerrestreForm(forms.Form):
     type_vehicule = forms.ChoiceField(
@@ -48,14 +45,14 @@ class AquaForm(forms.Form):
     type_vehicule = forms.ChoiceField(
         required=False,
         label="Type de déplacement",
-        choices=[('Sélectionner','Sélectionner'),('Moulin', 'Moulin'), ('Hélices', 'Hélices')],
+        choices=[('Sélectionner','Sélectionner'),('Moulin', 'Moulin'), ('Hélices (eau)', 'Hélices (eau)')],
         widget=forms.Select(attrs={'class': 'custom-select'})
     )
 
 class AirForm(forms.Form):
     type_vehicule = forms.ChoiceField(
         label="Type de déplacement",
-        choices=[('Sélectionner','Sélectionner'),('Hélices', 'Hélices'), ('Planeur', 'Planeur')],
+        choices=[('Sélectionner','Sélectionner'),('Hélices (air)', 'Hélices (air)'), ('Planeur', 'Planeur')],
         widget=forms.Select(attrs={'class': 'custom-select'})
     )
 
