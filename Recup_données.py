@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-import json
+import csv
 import os
 
 class Application(tk.Tk):
@@ -10,10 +10,12 @@ class Application(tk.Tk):
 
         self.title("Enregistreur de données")
 
-        # Créer le fichier data.json s'il n'existe pas
-        if not os.path.exists('data.json'):
-            with open('data.json', 'w') as file:
-                file.write("")
+        # Créer le fichier data.csv s'il n'existe pas
+        if not os.path.exists('data.csv'):
+            with open('data.csv', 'w', newline='') as file:
+                writer = csv.writer(file)
+                # Écrire l'en-tête du fichier CSV
+                writer.writerow(['Texte', *self.choices])
 
         # Zone de texte
         self.label_text = tk.Label(self, text="Saisissez votre texte:")
@@ -24,13 +26,13 @@ class Application(tk.Tk):
 
         # Liste des choix
         self.choices = [
-            "Caméra RGB (visualisation normale)",
-            "Caméra Infrarouge (visualisation nocturne)",
-            "Caméra thermique (visualisation chaleur)",
-            "Caméra profondeur (visualisation normale + profondeur)",
-            "Capteurs ultrasons (detection distance peu précis)",
-            "LED (éclairage pour environnement sombre)",
-            "Laser télémètre (mesure distance précise)"
+            "Caméra RGB",
+            "Caméra Infrarouge",
+            "Caméra thermique",
+            "Caméra profondeur",
+            "Capteurs ultrasons",
+            "LED",
+            "Laser télémètre"
         ]
 
         # Checkboxes
@@ -46,18 +48,15 @@ class Application(tk.Tk):
         self.save_btn.pack(pady=20)
 
     def save_data(self):
-        data = {
-            'text': self.text_input.get("1.0", 'end-1c'),  # Récupérer le texte
-            'choices': [choice for var, choice in zip(self.check_vars, self.choices) if var.get()]  # Récupérer les choix cochés
-        }
+        text_data = self.text_input.get("1.0", 'end-1c')  # Récupérer le texte
+        choices_data = [1 if var.get() else 0 for var in self.check_vars]  # Récupérer les choix sous forme 1 ou 0
 
-        # Sauvegarder les données en JSON
+        # Sauvegarder les données en CSV
         try:
-            with open('data.json', 'a') as file:
-                json.dump(data, file)
-                file.write('\n')  # Nouvelle ligne pour chaque entrée
+            with open('data.csv', 'a', newline='') as file:
+                writer = csv.writer(file)
+                writer.writerow([text_data, *choices_data])
 
-            messagebox.showinfo("Succès", "Les données ont été sauvegardées avec succès!")
             
             # Effacer le contenu de la zone de texte
             self.text_input.delete("1.0", tk.END)
