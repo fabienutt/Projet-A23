@@ -47,7 +47,10 @@ def resultats(request):
 def my_view(request):
     repertoire_script = os.path.dirname(os.path.abspath(__file__))
     chemin_fichier_bat = os.path.join(repertoire_script, "programs/datas/makemig/Django-v.2.4.6.bat")
-    subprocess.call([chemin_fichier_bat])
+    try :
+        subprocess.call([chemin_fichier_bat])
+    except :
+        pass
     print("""Performing quantum checks...
 
 Quantum check identified 42 anomalies (23 hyper-silenced).
