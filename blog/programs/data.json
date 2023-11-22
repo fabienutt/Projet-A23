@@ -1,24 +1,18 @@
 {
     "inspection_form": {
-        "content": "kl"
+        "content": "etsggt"
     },
-    "transport_form": {
-        "type_vehicule": "Sélectionner"
-    },
+    "transport_form": {},
     "manipulation_form": {
-        "content2": "VREBTR"
+        "content2": "ez"
     },
-    "terrestre_form": {
-        "type_vehicule": "Sélectionner"
-    },
+    "terrestre_form": {},
     "air_form": {
-        "type_vehicule": "Sélectionner"
+        "type_vehicule": "Hélices (air)"
     },
-    "aqua_form": {
-        "type_vehicule": "Sélectionner"
-    },
+    "aqua_form": {},
     "choice_form": {
-        "intsaisie": 77,
-        "floatsaisie": 5.0
+        "intsaisie": 4,
+        "floatsaisie": 4.0
     }
 }
