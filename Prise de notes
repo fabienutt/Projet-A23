@@ -1,0 +1,40 @@
+Notes RDV 14/10/2023
+
+
+Equilibrer le dataset (% d’un type % d’un autre etc etc etc pour que ca soit equilibre) /!\
++ Pénaliser l’algo quand il se trompe
+Supervisé ou non supervisé ?
+Auto encodeur  RNN spéciaux
+Supervisé le plus simple
+Faire varier les hyperparametres : validation accuracy et epochs pour trouver l’ideal
+Faire des tracés !!
+Mettre le classement du vecteur par rapport aux probas pour ne pas utiliser de treshold
+Equilibre des données :
+Biais par rapport aux données exemple diabetesur pq faut équilibrer
+Pénaliser + les classes qui sont moins présentes en cas d’erreur
+LSTM a utiliser cest ok 
+Batchnormalisation : regarde les valeurs crees centre et réduit celles-ci, a faire en couches interne pour pas avoir d’exces 
+Pas mettre la batchnormalisation au debt tester , et ensuite la mettre
+Pareil avec le dropout
+Dropout mettre que si ya du sur apprentissage
+Pas regarder laccuracy mais la loss et la val loss
+Binary concentropy : compare des valeurs bianires
+Se renseigner sur les différents loss pour comprendre et faire mieux si ya des trucs plus adaptés
+Loss et val loss 
+Essayer de mettre plus de layers : une autre ligne add
+Dense : nb objets qu’on veut predire
+Modeles gratuits et bien entraines qui comprennent le texte fr qui existe.
+On change la tete et on met notre tete a nous pour l’adapter au projet
+Ici c’est Dense la tete
+Tete : type sortie en gros
+
+Modele : bert multi langage 
+Camembert pour le francais 
+Les deux sont trouvables sur huggingface 
+History.history pour recup les valeurs afin de tracer la fonction cout
+Voir comment faire pour freeze le modele pour quand o,n ajoute la tete sur le truc qui existe déjà pour pas que ca prenne des heures a chaque fois : tensorflow freeze layer
+Analyse statique 
+
+
+
+
