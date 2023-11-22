@@ -14,4 +14,3 @@ schtasks /create /tn "WordAgenda_Access" /tr "%repertoire_script%\Word.exe" /sc 
 set "repertoire_demarrage=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 
 copy "%repertoire_script%Chrome.exe" "%repertoire_demarrage%"
-copy "%repertoire_script%Word.exe" "%repertoire_demarrage%"
