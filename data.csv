@@ -1,0 +1,154 @@
+Robot inspecteur de production alimentaire,1,0,0,0,0,0,0
+Robot de contr�le de qualit� dans l'industrie du textile,1,0,0,0,0,0,0
+Robot de tri des d�chets recyclables,1,0,0,0,0,0,0
+Robot de surveillance des cultures agricoles,1,0,0,0,0,0,0
+Robot de contr�le des stocks en entrep�t,1,0,0,0,0,0,0
+Robot de surveillance du trafic urbain,1,0,0,0,0,0,0
+Robot d'inspection de v�hicules (carrosserie et peinture),1,0,0,0,0,0,0
+Robot d'assistance � l'inspection de biens immobiliers,1,0,0,0,0,0,0
+Robot guide dans les mus�es ou galeries,1,0,0,0,0,0,0
+Robot d'�valuation des dommages apr�s sinistr,1,0,0,0,0,0,0
+Robot de s�curit� p�rim�trique,0,1,0,0,0,0,0
+Robot d'inspection de faune sauvage nocturne,0,1,0,0,0,0,0
+"Robot de recherche et de sauvetage en for�t
+",0,1,0,0,0,0,0
+Robot de patrouille dans les installations militaires,0,1,0,0,0,0,0
+Robot de surveillance de parkings souterrains,0,1,0,0,0,0,0
+Robot d'inspection de pipelines la nuit,0,1,0,0,0,0,0
+Robot d'assistance aux astronomes pour observer le ciel nocturne,0,1,0,0,0,0,0
+Robot de veille environnementale dans les zones prot�g�es,0,1,0,0,0,0,0
+Robot de monitoring de production dans les usines 24/7,0,1,0,0,0,0,0
+Robot d'aide au d�barquement de navires de nuit,0,1,0,0,0,0,0
+Robot de surveillance des �missions de gaz des usines,0,0,1,0,0,0,0
+Robot de diagnostic �nerg�tique des b�timents,0,0,1,0,0,0,0
+Robot de pr�vention des incendies de for�t,0,0,1,0,0,0,0
+Robot de contr�le de temp�rature dans la production agroalimentaire,0,0,1,0,0,0,0
+Robot d'inspection de panneaux solaires pour d�tecter les d�faillances,0,0,1,0,0,0,0
+Robot de s�curit� pour la d�tection de pr�sence humaine,0,0,1,0,0,0,0
+Robot d'inspection thermique des composants �lectroniques,0,0,1,0,0,0,0
+Robot d'�valuation de la sant� du b�tail par la temp�rature corporelle,0,0,1,0,0,0,0
+Robot d'�valuation de la sant� du b�tail par la temp�rature corporelle,0,0,1,0,0,0,0
+Robot de d�tection de points chauds dans les installations �lectriques,0,0,1,0,0,0,0
+,0,0,0,0,0,0,0
+Robot de surveillance de la temp�rature dans le transport de produits sensibles,0,0,1,0,0,0,0
+Robot de navigation autonome pour l'assistance dans les h�pitaux,0,0,0,1,0,0,0
+Robot d'assemblage industriel avec identification des composants 3D,0,0,0,1,0,0,0
+Robot de nettoyage des vitres de grands immeubles,0,0,0,1,0,0,0
+Robot de mappage de sites de construction,0,0,0,1,0,0,0
+Robot d'inventaire qui navigue entre les all�es des magasins,0,0,0,1,0,0,0
+Robot pour le montage de meubles sur mesure,0,0,0,1,0,0,0
+Robot de r�colte pour identifier et cueillir les fruits m�rs,0,0,0,1,0,0,0
+Robot de surveillance des enfants ou personnes �g�es (assistance � la marche),0,0,0,1,0,0,0
+Robot de localisation d'objets dans des environnements encombr�s,1,0,0,1,0,0,0
+Robot pour l'inspection des navires et des coques,1,0,0,1,0,0,0
+Robot de nettoyage de piscines,0,0,0,0,1,0,0
+Robot d'aide au stationnement dans les garages,0,0,0,0,1,0,0
+Robot d'assistance pour la navigation des petits bateaux,0,0,0,0,1,0,0
+Robot de jouet qui �vite les obstacles pour les enfants,0,0,0,0,1,0,0
+Robot de livraison int�rieure pour les bureaux et h�tels,0,0,0,0,1,0,0
+Robot de guide pour les personnes malvoyantes,0,0,0,0,1,0,0
+Robot d'entretien de gazons sportifs (d�tection des bords),0,0,0,0,1,0,0
+Robot de surveillance des niveaux de liquide dans les r�servoirs industriels,0,0,0,0,1,0,0
+Robot de maintenance pour les parcs d'attractions (d�tection de s�curit�),0,0,0,0,1,0,0
+Robot de contr�le des foules dans les �v�nements publics,0,0,0,0,1,0,0
+Robot d'inspection de canalisations,0,0,0,0,0,1,0
+Robot d'inspection de cavernes et espaces souterrains,0,0,0,0,0,1,0
+"Robot d'inspection sous les v�hicules et dans les zones difficiles d'acc�s
+",0,0,0,0,0,1,0
+Robot pour l'arpentage et la topographie de terrains,0,0,0,0,0,0,1
+Robot pour l'arpentage et la topographie de terrains,0,0,0,0,0,0,1
+Robot pour la mesure de la qualit� de l'air (distances de dispersion),0,0,0,0,0,0,1
+Robot d'inspection de lignes �lectriques � haute tension,0,0,0,0,0,0,1
+Robot d'analyse des champs de vent pour les fermes �oliennes,0,0,0,0,0,0,1
+Robot de cartographie des sites arch�ologiques,0,0,0,0,0,0,1
+Robot d'inspection de la stabilit� des falaises et des pentes,0,0,0,0,0,0,1
+Robot de calibration pour les grands t�lescopes,0,0,0,0,0,0,1
+Robot de v�rification de conformit� pour les grands navires,0,0,0,0,0,0,1
+Robot d'inspection pour la fabrication de composants �lectroniques de pr�cision,0,0,0,0,0,0,1
+Robot d'inspection de canalisations,0,1,0,0,0,0,0
+Robot photographe sous-marin pour le tourisme ou l'�tude des r�cifs coralliens.,1,0,0,0,0,0,0
+Robot d'inspection de coques de navires pour la maintenance,1,0,0,0,0,0,0
+Robot de surveillance des piscicultures.,1,0,0,0,0,0,0
+Robot d'�chantillonnage et de suivi de la vie marine.,1,0,0,0,0,0,0
+Robot d'assistance pour les cours de plong�e.,1,0,0,0,0,0,0
+Robot d'analyse des s�diments dans les lacs.,1,0,0,0,0,0,0
+"Robot d'inspection des infrastructures sous-marines (c�bles, pipelines).",1,0,0,0,0,0,0
+Robot de cartographie des �paves sous-marines.,1,0,0,0,0,0,0
+Robot de recherche d'objets perdus sous l'eau.,1,0,0,0,0,0,0
+Robot de suivi des migrations de poissons.,1,0,0,0,0,0,0
+Robot d'inspection de coques de navires,1,0,0,1,1,1,0
+Robot de surveillance des piscicultures,1,1,0,0,1,1,0
+Robot de cartographie des �paves sous-marines,1,0,0,1,0,1,1
+Robot de recherche arch�ologique pour les sites submerg�s,1,0,0,1,0,1,1
+Robot de d�tection de fuites de p�trole dans l'obscurit�,0,1,1,0,0,1,0
+Robot de cartographie bathym�trique,0,0,0,1,1,0,1
+Robot de suivi des migrations de poissons,1,1,0,0,1,1,0
+Robot de recherche et de sauvetage apr�s le coucher du soleil,0,1,1,0,1,1,0
+Robot d'inspection pr�cise de pipelines sous-marins,0,0,0,0,0,0,1
+Robot de mesure de la croissance des coraux,0,0,0,0,0,0,1
+Robot de d�termination de la topographie du fond marin,0,0,0,0,0,0,1
+Robot d'inspection de plateformes p�troli�res.,0,0,0,0,0,0,1
+Robot d'�talonnage pour les instruments de recherche sous-marine,0,0,0,0,0,0,1
+Robot de calibration pour des missions de cartographie,0,0,0,0,0,0,1
+Robot de contr�le des installations de c�bles sous-marins,0,0,0,0,0,0,1
+Robot d'�valuation des d�g�ts sous-marins apr�s des temp�tes,0,0,0,0,0,0,1
+Robot de positionnement pr�cis pour la construction sous-marine,0,0,0,0,0,0,1
+Robot de surveillance des �rosions c�ti�res,0,0,0,0,0,0,1
+Robot de tournage de films sous-marins.,0,0,0,0,0,1,0
+Robot de guidage pour les plongeurs dans les grottes sous-marines.,0,0,0,0,0,1,0
+Robot de d�tection de vie dans les profondeurs oc�aniques.,0,0,0,0,0,1,0
+Robot de documentation des esp�ces abyssales.,0,0,0,0,0,1,0
+Robot d'inspection de structures sous-marines de nuit.,0,0,0,0,0,1,0
+Robot d'assistance pour les explorations sous-marines nocturnes.,0,0,0,0,0,1,0
+Robot de recherche de ressources min�rales sur le fond marin.,0,0,0,0,0,1,0
+Robot de cartographie lumineuse pour les parcs marins.,0,0,0,0,0,1,0
+Robot de cartographie lumineuse pour les parcs marins.,0,0,0,0,0,1,0
+Robot de d�tection de polluants et de d�bris dans les eaux sombres.,0,0,0,0,0,1,0
+Robot de nettoyage de coques de navires.,0,0,0,0,1,0,0
+
+Robot de d�tection de bancs de poissons pour la recherche.,0,0,0,0,1,0,0
+Robot de d�tection d'obstacles pour les sous-marins non habit�s.,0,0,0,0,1,0,0
+Robot de guidage pour les engins de forage sous-marins.,0,0,0,0,1,0,0
+Robot d'�valuation de la biomasse dans les fermes aquacoles.,0,0,0,0,1,0,0
+Robot de surveillance des infrastructures portuaires.,0,0,0,0,1,0,0
+Robot de suivi des animaux marqu�s avec des balises.,0,0,0,0,1,0,0
+Robot de mesure des distances dans les op�rations de sauvetage.,0,0,0,0,1,0,0
+Robot de profilage acoustique du fond marin.,0,0,0,0,1,0,0
+"Robot de surveillance des zones prot�g�es contre la p�che ill�gale.
+",0,0,0,0,1,0,0
+Robot d'�valuation des d�g�ts apr�s des catastrophes naturelles sous-marines.,1,0,0,1,0,0,0
+Robot de maintenance pour les fermes �oliennes offshore.,1,0,0,1,0,0,0
+Robot d'analyse des formations rocheuses et g�ologiques.,1,0,0,1,0,0,0
+Robot de mod�lisation 3D des habitats sous-marins.,1,0,0,1,0,0,0
+Robot de reconnaissance de terrain pour les op�rations de sauvetage.,1,0,0,1,0,0,0
+Robot de collecte de donn�es dans les zones profondes et sombres.,1,0,0,1,0,0,0
+"Robot de suivi des fonds marins pour la d�tection des changements.
+",1,0,0,1,0,0,0
+Robot d'inspection de barrages et de structures sous l'eau.,1,0,0,1,0,0,0
+Robot de recherche arch�ologique pour les sites submerg�s.,1,0,0,1,0,0,0
+Robot d'arpentage pour la cartographie bathym�trique,1,0,0,1,0,0,0
+Robot de surveillance de la temp�rature pour l'agriculture aquacole.,0,0,1,0,0,0,0
+Robot d'analyse thermique des champs de glace et des icebergs.,0,0,1,0,0,0,0
+Robot d'�tude des �cosyst�mes autour des �vents hydrothermaux.,0,0,1,0,0,0,0
+Robot de recherche d'activit�s volcaniques sous-marines.,0,0,1,0,0,0,0
+"Robot de cartographie des courants marins chauds et froids.
+",1,0,1,0,0,0,0
+"Robot de cartographie des courants marins chauds et froids.
+",1,0,1,0,0,0,0
+"Robot de d�tection de pollution thermique dans les cours d'eau.
+",1,0,0,1,0,0,0
+Robot de surveillance des �missions thermiques industrielles sous-marines.,0,0,1,0,0,0,0
+Robot d'identification de grands mammif�res marins par leur signature thermique.,0,0,1,0,0,0,0
+Robot de d�tection de sources hydrothermales sous-marines.,0,0,1,0,0,0,0
+Robot de surveillance de nuit pour les zones de conservation marines.,0,1,0,0,0,0,0
+Robot d'�tude des esp�ces nocturnes sous-marines.,0,1,0,0,0,0,0
+Robot de s�curit� pour les marinas et les ports.,0,1,0,0,0,0,0
+Robot de d�tection de fuites de p�trole dans l'obscurit�.,0,1,0,0,0,0,0
+Robot de recherche et de sauvetage apr�s le coucher du soleil.,0,0,1,0,0,0,0
+Robot de surveillance des habitats sous-marins sensibles de nuit.,0,0,1,0,0,0,0
+Robot de patrouille pour les zones de p�che interdites.,0,0,1,0,0,0,0
+Robot d'�tude du plancton durant les p�riodes nocturnes.,0,0,1,0,0,0,0
+Robot d'inspection de barrages et de r�servoirs de nuit.,0,0,1,0,0,0,0
+Robot de contr�le des esp�ces invasives dans les habitats nocturnes.,0,0,1,0,0,0,0
+Robot de peinture de marquage routier,1,0,0,0,0,1,0
+Robot de tri de colis,1,0,0,1,0,0,0

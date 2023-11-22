@@ -20,6 +20,7 @@ from keras.regularizers import l1, l2
 from keras.callbacks import EarlyStopping
 from keras.layers import BatchNormalization
 
+
 """Chargement et prétraitement des données"""
 
 data = pd.read_csv('blog/programs/data.csv')

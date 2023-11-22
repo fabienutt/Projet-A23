@@ -72,18 +72,51 @@ function toggleCompartiment(id) {
 }
 
 function startRobotAnimation() {
-    const robotBtn = document.getElementById('robotBtn');
     const effectDiv = document.getElementById('robotEffect');
-    const mainCompartiment = document.getElementById('compartiment');
 
-    robotBtn.style.display = "none"; // Cacher le bouton dès le début de l'animation
-    effectDiv.style.display = "block"; // Afficher "Chargement..."
+    // Génère un seul caractère Matrix qui tombe
+    function generateMatrixCharacter() {
+        const character = document.createElement('span');
+        character.textContent = String.fromCharCode(33 + Math.random() * (127 - 33)); // Caractères imprimables ASCII
+        character.classList.add('matrix-character');
+        character.style.left = Math.random() * 100 + 'vw';
+        character.style.opacity = Math.random(); // Varie l'opacité pour plus de réalisme
+        // Durée et délai aléatoires pour l'animation
+        const duration = Math.random() * 5 + 5; // Entre 5 et 10 secondes
+        character.style.setProperty('--animation-duration', `${duration}s`);
+        character.style.setProperty('--animation-delay', `${-duration}s`);
+        
+        effectDiv.appendChild(character);
 
-    setTimeout(() => {
-        effectDiv.style.display = "none"; // Cacher "Chargement..."
-        mainCompartiment.style.display = "block"; // Afficher le compartiment principal
-    }, 900); // Après 1 seconde
+        // Supprime le caractère après qu'il a fini de tomber pour nettoyer le DOM
+        character.addEventListener('animationend', () => {
+            effectDiv.removeChild(character);
+        });
+    }
+
+    // Génère plusieurs caractères pour l'animation
+    function populateMatrix() {
+        const numberOfCharacters = window.innerWidth / 10; // Un caractère tous les 10 pixels de largeur d'écran
+        for (let i = 0; i < numberOfCharacters; i++) {
+            generateMatrixCharacter();
+        }
+    }
+
+    // Démarre l'animation et repopule de temps en temps pour ajouter de nouveaux caractères
+    populateMatrix();
+    setInterval(populateMatrix, 5000); // Toutes les 5 secondes
+
+    // Optionnel : arrêter l'animation après un certain temps
+    // setTimeout(() => effectDiv.style.display = 'none', 30000); // Arrête après 30 secondes
 }
+
+// Démarrez l'animation lorsque le contenu est chargé
+document.addEventListener('DOMContentLoaded', startRobotAnimation);
+
+
+
+
+
 
 
 

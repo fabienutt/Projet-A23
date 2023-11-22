@@ -27,7 +27,7 @@ class TransportForm(forms.Form):
         widget=forms.Select(attrs={'class': 'custom-select'})
     )
 class ManipulationForm(forms.Form):
-    content = forms.CharField(
+    content2 = forms.CharField(
         required=False,
         label='Description de la manipulation ',
         widget=forms.Textarea(attrs={'rows': 10, 'cols': 50, 'class': 'custom-textarea'}))
