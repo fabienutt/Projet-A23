@@ -5,56 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compartiment Exemple</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <script src="{% static 'js/script.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+    <script src="{% static 'js/script1.js' %}"></script>
 </head>
 <body>
     <div class="center-container">
         <h1>Fonction du robot</h1>
-        <div id="robotEffect" class="matrix-effect">GENERO</div>
-        <script>
-            window.onload = function() {
-              var glitchEffect = document.getElementById('robotEffect');
-              glitchEffect.style.display = 'block'; // Show the glitch effect
-              
-              // Hide the glitch effect after 3 seconds
-              setTimeout(function() {
-                glitchEffect.style.display = 'none';
-              }, 3000);
-            };
-            </script>
+        
+
             
         
         <form id="globalForm" method="post" action="">
             {% csrf_token %}
-            <div class="compartiment">
+            <div class="compartiment deconstruct-element-body">
                 <h2>Inspection</h2>
                 {{ inspection_form.as_p }}
             </div>
 
-            <div class="compartiment">
+            <div class="compartiment deconstruct-element-body">
                 <h2>Transport</h2>
                 {{ transport_form.as_p }}
-                <div id="terrestreDiv" style="display: none;">
+                <div id="terrestreDiv" style="display: none;" class="deconstruct-element-body">
                     {{ terrestre_form.as_p }}
                 </div>
-                <div id="aquaDiv" style="display: none;">
+                <div id="aquaDiv" style="display: none;" class="deconstruct-element-body">
                     {{ aqua_form.as_p }}
                 </div>
-                <div id="airDiv" style="display: none;">
+                <div id="airDiv" style="display: none;" class="deconstruct-element-body">
                     {{ air_form.as_p }}
                 </div>
-                <div id="deplacementDiv" style="display: none;">
+                <div id="deplacementDiv" style="display: none;" class="deconstruct-element-body">
                     {{ choice_form.as_p }}
                 </div>
             </div>
 
-            <div class="compartiment">
+            <div class="compartiment deconstruct-element-body">
                 <h2>Manipulation</h2>
                 {{ manipulation_form.as_p }}
             </div>
             
-            <button id="submitAll" type="submit">Soumettre tous les formulaires</button>
+            <button id="submitAll" type="submit" class="deconstruct-element-body">Soumettre tous les formulaires</button>
         </form>
     </div>
 </body>

@@ -1,0 +1,90 @@
+/* Reset CSS */
+body, h1, h2, p, form {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1a1a1a, #111111); /* Dégradé de gris foncé à noir */
+  color: #ffffff; /* Texte en blanc */
+  text-align: center;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.deconstruct-element-header {
+  color: #3498db; /* Bleu de l'en-tête */
+}
+
+.deconstruct-element-body {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #555; /* Bordure plus sombre */
+  background: linear-gradient(135deg, #333333, #222222); /* Dégradé de gris foncé à noir pour le fond */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+#robotEffect {
+  display: none;
+}
+
+.compartiment {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background: #333; /* Gris foncé pour les boîtes de saisie */
+  border: 1px solid #444; /* Bordure plus sombre */
+  color: #ffffff;
+}
+
+button {
+  background: linear-gradient(135deg, #00ff87, #00cc6c); /* Dégradé de vert pour le bouton */
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #00cc6c, #009951); /* Vert légèrement assombri au survol */
+}
+
+/* Animation d'entrée */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-element {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Logo en haut à droite */
+.logo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: auto;
+}
