@@ -10,6 +10,8 @@ from keras.callbacks import EarlyStopping
 from keras.layers import BatchNormalization
 from datetime import datetime
 
+
+
 MAX_NB_WORDS = 50000
 MAX_SEQUENCE_LENGTH = 250
 EMBEDDING_DIM = 100
@@ -52,6 +54,7 @@ def process_data(text, MAX_NB_WORDS=50000, EMBEDDING_DIM=100, MAX_SEQUENCE_LENGT
 
     resultat ="Capteurs prédits :", ", ".join(predicted_capteurs)
     return resultat
+
 
 
 

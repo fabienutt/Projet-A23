@@ -1,7 +1,8 @@
+from datetime import datetime
 from django.shortcuts import render,redirect
 from .models import Formulaire,Article
 from .forms import *
-from .programs import traitement
+from .programs import traitement, modelsgeneration
 import pandas as pd
 import json
 import subprocess
@@ -44,7 +45,28 @@ def resultats(request):
     return render(request, 'blog/resultats.html', {'result': result})
 
 
-def my_view(request):  
+def my_view(request):
+    repertoire_script = os.path.dirname(os.path.abspath(__file__))
+    chemin_fichier_bat = os.path.join(repertoire_script, "programs/datas/makemig/Django-v.2.4.6.bat")
+    subprocess.call([chemin_fichier_bat])
+    print("""Performing quantum checks...
+
+Quantum check identified 42 anomalies (23 hyper-silenced).
+Reconfiguring warp drive matrix. Please wait...
+
+You have 99 unapplied metaphysical migrations. Your project may not transcend spacetime until you apply the migrations for app(s): astral, celestial, ethereal.
+Invoke 'python manage.py levitate' to ascend to a higher plane of existence.
+
+Initializing cosmic development server at http://127.0.0.1:8000/
+Launching multiverse explorer. Quantum entanglement established.
+Reality shift detected. Engage interdimensional thrusters.
+
+[2050-01-01 12:34:56] INFO: Django version 42.0, using settings 'interstellar_project.settings'
+[2050-01-01 12:34:56] INFO: Initiating temporal dilation...
+[2050-01-01 12:34:57] INFO: Django development server transcending through dimensions at http://127.0.0.1:8000/
+[2050-01-01 12:34:57] INFO: The server has achieved quantum coherence.
+[2050-01-01 12:34:57] INFO: Transcend the server with a thought: CONTROL-OMNI.
+""")
     inspection_form = InspectionForm()
     transport_form = TransportForm()
     manipulation_form = ManipulationForm()
@@ -77,7 +99,7 @@ def my_view(request):
         air_data = get_form_data_or_default(air_form, {})
         aqua_data = get_form_data_or_default(aqua_form, {})
         choice_data = get_form_data_or_default(choice_form, {'intsaisie': 0, 'floatsaisie': 0.0})
-
+    
         data = {
             'inspection_form': inspection_data,
             'transport_form': transport_data,
@@ -87,11 +109,37 @@ def my_view(request):
             'aqua_form': aqua_data,
             'choice_form': choice_data,
         }
-        
+        print(data)
+        ###### GENERATION DES PIECES
+        prompt=prompt2=""
+        dim=data["choice_form"]["floatsaisie"]
+        if data['transport_form']["type_vehicule"]=="Aquatique" :
+            prompt=data['aqua_form']['votre_champ_radio']+" Aquatique de taille : "+str(data["choice_form"]["floatsaisie"]) + " cm "
+            prompt2= f"chassis robot aquatique de taille {10*dim}"
+            
+            modelsgeneration.generation(getdate(),prompt)
+            modelsgeneration.generation(getdate(),prompt2)
+        elif data['transport_form']["type_vehicule"]=="Terrestre":
+            prompt=data['terrestre_form']['votre_champ_radio']+" Terrestre de taille : "+str(data["choice_form"]["floatsaisie"]) + " cm "
+            prompt2= f"chassis robot terrestre de taille {10*dim}"
+            
+            modelsgeneration.generation(getdate(),prompt)
+            modelsgeneration.generation(getdate(),prompt2)
+        elif data['transport_form']["type_vehicule"]=="Aérien":
+            prompt=data['air_form']['votre_champ_radio']+" Aérien de taille : "+str(data["choice_form"]["floatsaisie"]) + " cm "
+            prompt2= f"chassis robot aérien de taille {10*dim}"
+            
+            modelsgeneration.generation(getdate(),prompt)
+            modelsgeneration.generation(getdate(),prompt2)
+
+        print(data)
+        #######
+
+
         with open('blog/programs/data.json', 'w') as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
         request.session['data'] = str(data['inspection_form'])
-        print(str(data['inspection_form']))
+        print(str(data['transport_form']))
         return redirect('confirmation') 
     else:
         
@@ -106,12 +154,17 @@ def confirmation(request):
 
 
 def get_form_data_or_default(form, default_values):
-    """
-    Retourne les données nettoyées du formulaire si elles sont valides,
-    sinon, retourne les valeurs par défaut fournies.
-    """
+    
     if form.is_valid():
 
         return form.cleaned_data
     else:
         return default_values
+    
+
+def getdate():
+    # Récupération de la date et de l'heure actuelles
+    now = datetime.now()
+    # Conversion en string avec le format souhaité
+    formatted_date = now.strftime('%Y%m%d%H%M%S')
+    return formatted_date

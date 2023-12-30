@@ -1,24 +1,20 @@
 {
     "inspection_form": {
-        "content": "azertyuiop"
+        "content": "e"
     },
     "transport_form": {
-        "type_vehicule": "Sélectionner"
+        "type_vehicule": "Terrestre"
     },
     "manipulation_form": {
-        "content2": "zedrtyuio"
+        "content2": "5"
     },
     "terrestre_form": {
-        "type_vehicule": "Sélectionner"
+        "votre_champ_radio": "Roues"
     },
-    "air_form": {
-        "type_vehicule": "Sélectionner"
-    },
-    "aqua_form": {
-        "type_vehicule": "Sélectionner"
-    },
+    "air_form": {},
+    "aqua_form": {},
     "choice_form": {
-        "intsaisie": 4,
-        "floatsaisie": 5.0
+        "intsaisie": 8,
+        "floatsaisie": 7.0
     }
 }

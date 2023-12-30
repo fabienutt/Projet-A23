@@ -34,26 +34,30 @@ class ManipulationForm(forms.Form):
     
 
 class TerrestreForm(forms.Form):
-    type_vehicule = forms.ChoiceField(
-        required=False,
-        label="Type de déplacement",
-        choices=[('Sélectionner','Sélectionner'),('Roues', 'Roues'), ('Chenilles', 'Chenilles')],
-        widget=forms.Select(attrs={'class': 'custom-select'})
+    
+    choices=[('Roues', 'Roues'), ('Chenilles', 'Chenilles')]
+    
+    votre_champ_radio = forms.ChoiceField(
+        choices=choices,
+        widget=forms.RadioSelect
     )
 
 class AquaForm(forms.Form):
-    type_vehicule = forms.ChoiceField(
-        required=False,
-        label="Type de déplacement",
-        choices=[('Sélectionner','Sélectionner'),('Moulin', 'Moulin'), ('Hélices (eau)', 'Hélices (eau)')],
-        widget=forms.Select(attrs={'class': 'custom-select'})
+    
+    choices=[('Moulin', 'Moulin'), ('Hélices (eau)', 'Hélices (eau)')]
+    
+    votre_champ_radio = forms.ChoiceField(
+        choices=choices,
+        widget=forms.RadioSelect
     )
 
 class AirForm(forms.Form):
-    type_vehicule = forms.ChoiceField(
-        label="Type de déplacement",
-        choices=[('Sélectionner','Sélectionner'),('Hélices (air)', 'Hélices (air)'), ('Planeur', 'Planeur')],
-        widget=forms.Select(attrs={'class': 'custom-select'})
+    
+    choices=[('Hélices (air)', 'Hélices (air)'), ('Planeur', 'Planeur')]
+        
+    votre_champ_radio = forms.ChoiceField(
+        choices=choices,
+        widget=forms.RadioSelect
     )
 
 class ChoiceForm(forms.Form):
