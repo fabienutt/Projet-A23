@@ -1,13 +1,14 @@
 from datetime import datetime
+from django.http import FileResponse, HttpResponse
 from django.shortcuts import render,redirect
-from .models import Formulaire,Article
+from .models import Formulaire,Article,Shape
 from .forms import *
 from .programs import traitement, modelsgeneration
 import pandas as pd
 import json
 import subprocess
 import os
-
+import mimetypes
 
 def blog_index(request):
     articles = Article.objects.all()
@@ -117,28 +118,31 @@ Reality shift detected. Engage interdimensional thrusters.
             prompt=data['aqua_form']['votre_champ_radio']+" Aquatique de taille : "+str(data["choice_form"]["floatsaisie"]) + " cm "
             prompt2= f"chassis robot aquatique de taille {10*dim}"
             
-            modelsgeneration.generation(getdate(),prompt)
-            modelsgeneration.generation(getdate(),prompt2)
+            path1=modelsgeneration.generation(getdate(),prompt)
+            path2=modelsgeneration.generation(getdate(),prompt2)
         elif data['transport_form']["type_vehicule"]=="Terrestre":
             prompt=data['terrestre_form']['votre_champ_radio']+" Terrestre de taille : "+str(data["choice_form"]["floatsaisie"]) + " cm "
             prompt2= f"chassis robot terrestre de taille {10*dim}"
             
-            modelsgeneration.generation(getdate(),prompt)
-            modelsgeneration.generation(getdate(),prompt2)
+            path1=modelsgeneration.generation(getdate(),prompt)
+            path2=modelsgeneration.generation(getdate(),prompt2)
         elif data['transport_form']["type_vehicule"]=="Aérien":
             prompt=data['air_form']['votre_champ_radio']+" Aérien de taille : "+str(data["choice_form"]["floatsaisie"]) + " cm "
             prompt2= f"chassis robot aérien de taille {10*dim}"
             
-            modelsgeneration.generation(getdate(),prompt)
-            modelsgeneration.generation(getdate(),prompt2)
+            path1=modelsgeneration.generation(getdate(),prompt)
+            path2=modelsgeneration.generation(getdate(),prompt2)
 
         print(data)
         #######
-
+        data['path1']=path1
+        data['path2']=path2
 
         with open('blog/programs/data.json', 'w') as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
-        request.session['data'] = str(data['inspection_form'])
+        request.session['data'] = str(data)
+        request.session['path1'] = str(data['path1'])
+        request.session['path2'] = str(data['path2'])
         print(str(data['transport_form']))
         return redirect('confirmation') 
     else:
@@ -147,11 +151,38 @@ Reality shift detected. Engage interdimensional thrusters.
 
 def confirmation(request):
     result = request.session.get('data', '')
+    print(result)
     final=traitement.process_data(result)
     return render(request, 'blog/confirmation.html',{'result':final})
 
 
 
+def download_page(request):
+    result = request.session.get('path1', '')
+    file_path = result
+    file_name = os.path.basename(file_path)
+    return render(request, 'blog/3D.html',{'file':file_name})
+
+def download_file(request):
+    result = request.session.get('path2', '')
+    print(result)
+    file_path = result
+    file_name = os.path.basename(file_path)
+    fl = open(file_path, 'r')
+    mime_type, _ = mimetypes.guess_type(file_path)
+    response = HttpResponse(fl, content_type=mime_type)
+    response['Content-Disposition'] = "attachment; filename=%s" % file_name
+    return response
+def download_file1(request):
+    result = request.session.get('path1', '')
+    print(result)
+    file_path = result
+    file_name = os.path.basename(file_path)
+    fl = open(file_path, 'r')
+    mime_type, _ = mimetypes.guess_type(file_path)
+    response = HttpResponse(fl, content_type=mime_type)
+    response['Content-Disposition'] = "attachment; filename=%s" % file_name
+    return response
 
 def get_form_data_or_default(form, default_values):
     

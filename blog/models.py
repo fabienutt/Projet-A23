@@ -48,3 +48,13 @@ class complage(models.Model):
     class Meta:
         unique_together = ['composant', 'assemblage']
         
+Shape_choices=(
+    ("1","sphere"),
+    ("2","box"),
+    ("3","cylinder"),)
+class Shape(models.Model):
+    color=models.CharField(max_length=7,help_text='hex')
+    type = models.CharField(max_length=1,choices=Shape_choices)
+
+    def __str__(self):
+        return str(self.id)

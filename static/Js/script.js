@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         switch (this.value) {
             case 'Terrestre':
                 terrestreDiv.style.display = 'block';
+                
                 break;
             case 'Aquatique':
                 aquaDiv.style.display = 'block';

@@ -21,7 +21,7 @@ def example_create_text_to_cad(text):
     model_config = {'protected_namespaces': ()}
     result: Optional[Union[TextToCad, Error]] = create_text_to_cad.sync(
         client=client,
-        output_format=FileExportFormat.GLTF,
+        output_format=FileExportFormat.STL,
         body=TextToCadCreateBody(
             prompt=text,
         ),
@@ -71,11 +71,12 @@ def example_get_text_to_cad_model_for_user(id1,name):
     outputs: Dict[str, Base64Data] = fc.outputs
     print(outputs)
     for _, output in outputs.items():
-        output_file_path = f"C:/Users/FireF/OneDrive/Documents/GitHub/Projet-A23/Back/fichiers/{name}.gltf"
+        output_file_path = f"C:/Users/FireF/OneDrive/Documents/GitHub/Projet-A23/Back/fichiers/{name}.stl"
         print(f"Saving output to {output_file_path}")
         output_file = open(output_file_path, "wb")
         output_file.write(output.get_decoded())
         output_file.close()
+        return output_file_path
 
 
 def generation(name, text):
@@ -87,12 +88,13 @@ def generation(name, text):
             time.sleep(2)
             print(text)
             print(name)
-            example_get_text_to_cad_model_for_user(id, name)
+            path=example_get_text_to_cad_model_for_user(id, name)
             time.sleep(1)
             break  # Sort de la boucle si tout se passe bien
         except AttributeError:
             print("Erreur - Réessayer...")
             
-            time.sleep(1)  
+            time.sleep(1)
+    return path  
 
 

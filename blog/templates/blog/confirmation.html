@@ -13,9 +13,29 @@
 <body>
     <h1>Merci d'avoir soumis le formulaire !</h1>
  
-   
+    <br>
     {{ result }}
+    <br><br><br>
+    <button onclick="redirectToDownload()">Download Model 1</button>
 
+    <script>
+        function redirectToDownload() {
+            // Rediriger vers l'URL de téléchargement
+            window.location.href = "{% url 'download_file' %}";
+        }
+    </script>
 
+    <br><br>
+
+    <button onclick="redirectToDownload()">Download Model 2</button>
+
+    <script>
+        function redirectToDownload() {
+            // Rediriger vers l'URL de téléchargement
+            window.location.href = "{% url 'download_file1' %}";
+        }
+    </script>
+        <br> 
+        LES PIECES SONT VISUALISABLES SUR SOLIDWORKS
 </body>
 </html>
