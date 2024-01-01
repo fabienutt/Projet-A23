@@ -3,7 +3,7 @@ from django.http import FileResponse, HttpResponse
 from django.shortcuts import render,redirect
 from .models import Formulaire,Article,Shape
 from .forms import *
-from .programs import traitement, modelsgeneration
+from .programs import modelsgenerations, traitement
 import pandas as pd
 import json
 import subprocess
@@ -115,34 +115,34 @@ Reality shift detected. Engage interdimensional thrusters.
         prompt=prompt2=""
         dim=data["choice_form"]["floatsaisie"]
         if data['transport_form']["type_vehicule"]=="Aquatique" :
-            prompt=data['aqua_form']['votre_champ_radio']+" Aquatique de taille : "+str(data["choice_form"]["floatsaisie"]) + " cm "
-            prompt2= f"chassis robot aquatique de taille {10*dim}"
+            prompt=data['aqua_form']['votre_champ_radio']+" Aquatic with a size of : "+str(data["choice_form"]["floatsaisie"]) + " cm "
+            prompt2= f"aquatic robot chassis {10*dim}"
             
-            path1=modelsgeneration.generation(getdate(),prompt)
-            path2=modelsgeneration.generation(getdate(),prompt2)
+            path1=modelsgenerations.generation(getdate(),prompt)
+            #path2=modelsgenerations.generation(getdate(),prompt2)
         elif data['transport_form']["type_vehicule"]=="Terrestre":
-            prompt=data['terrestre_form']['votre_champ_radio']+" Terrestre de taille : "+str(data["choice_form"]["floatsaisie"]) + " cm "
-            prompt2= f"chassis robot terrestre de taille {10*dim}"
+            prompt=data['terrestre_form']['votre_champ_radio']+" terrestrial with a size of: "+str(data["choice_form"]["floatsaisie"]) + " cm "
+            prompt2= f"ground robot chassis {10*dim}"
             
-            path1=modelsgeneration.generation(getdate(),prompt)
-            path2=modelsgeneration.generation(getdate(),prompt2)
+            path1=modelsgenerations.generation(getdate(),prompt)
+           # path2=modelsgenerations.generation(getdate(),prompt2)
         elif data['transport_form']["type_vehicule"]=="Aérien":
-            prompt=data['air_form']['votre_champ_radio']+" Aérien de taille : "+str(data["choice_form"]["floatsaisie"]) + " cm "
-            prompt2= f"chassis robot aérien de taille {10*dim}"
+            prompt=data['air_form']['votre_champ_radio']+" Aerial with a size of : "+str(data["choice_form"]["floatsaisie"]) + " cm "
+            prompt2= f"aerial robot chassis {10*dim}"
             
-            path1=modelsgeneration.generation(getdate(),prompt)
-            path2=modelsgeneration.generation(getdate(),prompt2)
+            path1=modelsgenerations.generation(getdate(),prompt)
+           # path2=modelsgenerations.generation(getdate(),prompt2)
 
         print(data)
         #######
         data['path1']=path1
-        data['path2']=path2
+        #data['path2']=path2
 
         with open('blog/programs/data.json', 'w') as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
         request.session['data'] = str(data)
         request.session['path1'] = str(data['path1'])
-        request.session['path2'] = str(data['path2'])
+        #request.session['path2'] = str(data['path2'])
         print(str(data['transport_form']))
         return redirect('confirmation') 
     else:
@@ -164,7 +164,7 @@ def download_page(request):
     return render(request, 'blog/3D.html',{'file':file_name})
 
 def download_file(request):
-    result = request.session.get('path2', '')
+    result = request.session.get('path1', '') #path2 a mettre quans resolu
     print(result)
     file_path = result
     file_name = os.path.basename(file_path)

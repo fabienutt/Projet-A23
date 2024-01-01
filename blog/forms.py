@@ -35,7 +35,7 @@ class ManipulationForm(forms.Form):
 
 class TerrestreForm(forms.Form):
     
-    choices=[('Roues', 'Roues'), ('Chenilles', 'Chenilles')]
+    choices=[('Wheels', 'Wheels'), ('Crawlers', 'Crawlers')]
     
     votre_champ_radio = forms.ChoiceField(
         choices=choices,
@@ -44,7 +44,7 @@ class TerrestreForm(forms.Form):
 
 class AquaForm(forms.Form):
     
-    choices=[('Moulin', 'Moulin'), ('Hélices (eau)', 'Hélices (eau)')]
+    choices=[('Water mill', 'Water mill'), ('Helices (water)', 'Helices (water)')]
     
     votre_champ_radio = forms.ChoiceField(
         choices=choices,
@@ -53,7 +53,7 @@ class AquaForm(forms.Form):
 
 class AirForm(forms.Form):
     
-    choices=[('Hélices (air)', 'Hélices (air)'), ('Planeur', 'Planeur')]
+    choices=[('Helices (air)', 'Helices (air)'), ('Glider', 'Glider')]
         
     votre_champ_radio = forms.ChoiceField(
         choices=choices,

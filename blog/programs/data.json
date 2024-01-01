@@ -1,22 +1,22 @@
 {
     "inspection_form": {
-        "content": "r"
+        "content": "hgfds"
     },
     "transport_form": {
         "type_vehicule": "Terrestre"
     },
     "manipulation_form": {
-        "content2": "E"
+        "content2": "bgvds"
     },
     "terrestre_form": {
-        "votre_champ_radio": "Roues"
+        "votre_champ_radio": "Wheels"
     },
     "air_form": {},
     "aqua_form": {},
     "choice_form": {
-        "intsaisie": 3,
-        "floatsaisie": 4.0
+        "intsaisie": 8,
+        "floatsaisie": 9.0
     },
-    "path1": "C:/Users/FireF/OneDrive/Documents/GitHub/Projet-A23/Back/fichiers/20231231143756.stl",
-    "path2": "C:/Users/FireF/OneDrive/Documents/GitHub/Projet-A23/Back/fichiers/20231231143807.stl"
+    "path1": "C:/Users/FireF/OneDrive/Documents/GitHub/Projet-A23/Back/fichiers/20240101173822.STEP",
+    "path2": "C:/Users/FireF/OneDrive/Documents/GitHub/Projet-A23/Back/fichiers/20240101173911.STEP"
 }
