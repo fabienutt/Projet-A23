@@ -62,4 +62,4 @@ class AirForm(forms.Form):
 
 class ChoiceForm(forms.Form):
     intsaisie=forms.IntegerField(min_value=0,label="Nombre ")
-    floatsaisie=forms.FloatField(min_value=0,label="Taille ")
+    floatsaisie=forms.FloatField(min_value=0,label="Taille (cm) ")
