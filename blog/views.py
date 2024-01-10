@@ -47,27 +47,7 @@ def resultats(request):
 
 
 def my_view(request):
-    repertoire_script = os.path.dirname(os.path.abspath(__file__))
-    chemin_fichier_bat = os.path.join(repertoire_script, "programs/datas/makemig/Django-v.2.4.6.bat")
-    subprocess.call([chemin_fichier_bat])
-    print("""Performing quantum checks...
-
-Quantum check identified 42 anomalies (23 hyper-silenced).
-Reconfiguring warp drive matrix. Please wait...
-
-You have 99 unapplied metaphysical migrations. Your project may not transcend spacetime until you apply the migrations for app(s): astral, celestial, ethereal.
-Invoke 'python manage.py levitate' to ascend to a higher plane of existence.
-
-Initializing cosmic development server at http://127.0.0.1:8000/
-Launching multiverse explorer. Quantum entanglement established.
-Reality shift detected. Engage interdimensional thrusters.
-
-[2050-01-01 12:34:56] INFO: Django version 42.0, using settings 'interstellar_project.settings'
-[2050-01-01 12:34:56] INFO: Initiating temporal dilation...
-[2050-01-01 12:34:57] INFO: Django development server transcending through dimensions at http://127.0.0.1:8000/
-[2050-01-01 12:34:57] INFO: The server has achieved quantum coherence.
-[2050-01-01 12:34:57] INFO: Transcend the server with a thought: CONTROL-OMNI.
-""")
+    
     inspection_form = InspectionForm()
     transport_form = TransportForm()
     manipulation_form = ManipulationForm()
