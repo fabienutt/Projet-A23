@@ -131,8 +131,11 @@ def my_view(request):
 
 def confirmation(request):
     result = request.session.get('data', '')
-    print(result)
     final=traitement.process_data(result)
+    final=str(final).replace(',',' ')
+    final=final.replace('(','')
+    final=final.replace(')','')
+    final=final.replace("'","")
     return render(request, 'blog/confirmation.html',{'result':final})
 
 
