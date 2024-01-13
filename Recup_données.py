@@ -26,13 +26,13 @@ class Application(tk.Tk):
 
         # Liste des choix
         self.choices = [
-            "Caméra RGB",
-            "Caméra Infrarouge",
-            "Caméra thermique",
-            "Caméra profondeur",
-            "Capteurs ultrasons",
-            "LED",
-            "Laser télémètre"
+            "Pince",
+            "Verin",
+            "Haut_parleur",
+            "Pompe",
+            "Ecran",
+            "Electroaimant",
+            "Tapis_roulant"
         ]
 
         # Checkboxes
