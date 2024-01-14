@@ -14,8 +14,14 @@
     <h1>Merci d'avoir soumis le formulaire !</h1>
  
     <br>
-    {{ result }}
-    <br><br><br>
+    {% for element in capteurs %}
+  {{ element }}<br>
+{% endfor %}
+    <br>
+    {% for element in actionneurs %}
+  {{ element }}<br>
+{% endfor %}
+    <br><br>
     <button onclick="redirectToDownload()">Download Model 1</button>
 
     <script>

@@ -1,12 +1,12 @@
 {
     "inspection_form": {
-        "content": "h"
+        "content": "détection d'obstacles dans une maison"
     },
     "transport_form": {
         "type_vehicule": "Terrestre"
     },
     "manipulation_form": {
-        "content2": "n"
+        "content2": "ramassage d'ordures avec une pince"
     },
     "terrestre_form": {
         "votre_champ_radio": "Wheels"
@@ -14,8 +14,14 @@
     "air_form": {},
     "aqua_form": {},
     "choice_form": {
-        "intsaisie": 7,
-        "floatsaisie": 8.0
+        "intsaisie": 4,
+        "floatsaisie": 5.0
     },
-    "path1": "C:/Users/FireF/OneDrive/Documents/GitHub/Projet-A23/Back/fichiers/20240111143231.STEP"
+    "path1": "C:/Users/FireF/OneDrive/Documents/GitHub/Projet-A23/Back/fichiers/20240114010538.STEP",
+    "actionneurs": {
+        "content2": "ramassage d'ordures avec une pince"
+    },
+    "capteurs": {
+        "content": "détection d'obstacles dans une maison"
+    }
 }

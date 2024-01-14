@@ -26,13 +26,13 @@ class Application(tk.Tk):
 
         # Liste des choix
         self.choices = [
-            "Caméra RGB",
-            "Caméra Infrarouge",
-            "Caméra thermique",
-            "Caméra profondeur",
-            "Capteurs ultrasons",
-            "LED",
-            "Laser télémètre"
+            "Pince",
+            "Verin",
+            "Haut_parleur",
+            "Pompe",
+            "Ecran",
+            "Electroaimant",
+            "Tapis_roulant"
         ]
 
         # Checkboxes
@@ -53,7 +53,7 @@ class Application(tk.Tk):
 
         # Sauvegarder les données en CSV
         try:
-            with open('data.csv', 'a', newline='') as file:
+            with open('C:/Users/FireF/OneDrive/Documents/GitHub/Projet-A23/blog/programs/datas/data.csv', 'a', newline='') as file:
                 writer = csv.writer(file)
                 writer.writerow([text_data, *choices_data])
 

@@ -3,7 +3,7 @@ from django.http import FileResponse, HttpResponse
 from django.shortcuts import render,redirect
 from .models import Formulaire,Article,Shape
 from .forms import *
-from .programs import modelsgenerations, traitement
+from .programs import modelsgenerations, traitement1
 import pandas as pd
 import json
 import subprocess
@@ -90,7 +90,7 @@ def my_view(request):
             'aqua_form': aqua_data,
             'choice_form': choice_data,
         }
-        print(data)
+        
         ###### GENERATION DES PIECES
         prompt=prompt2=""
         dim=data["choice_form"]["floatsaisie"]
@@ -113,15 +113,19 @@ def my_view(request):
             path1=modelsgenerations.generation(getdate(),prompt)
            # path2=modelsgenerations.generation(getdate(),prompt2)
 
-        print(data)
+        
         #######
         data['path1']=path1
+        data['actionneurs']=manipulation_data
+        data['capteurs']=inspection_data
         #data['path2']=path2
 
         with open('blog/programs/data.json', 'w') as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
         request.session['data'] = str(data)
+        request.session['capteurs'] = str(data['capteurs'])
         request.session['path1'] = str(data['path1'])
+        request.session['actionneurs'] = str(data['actionneurs'])
         #request.session['path2'] = str(data['path2'])
         print(str(data['transport_form']))
         return redirect('confirmation') 
@@ -130,13 +134,24 @@ def my_view(request):
         return render(request, 'blog/template.html', context)
 
 def confirmation(request):
-    result = request.session.get('data', '')
-    final=traitement.process_data(result)
+    result = request.session.get('capteurs', '')
+    result1=request.session.get('actionneurs', '')
+    print("///// RESULT : ", result)
+    print("///// RESULT 1 : ",result1)
+    
+    final=traitement1.process_data(str(result))
     final=str(final).replace(',',' ')
     final=final.replace('(','')
     final=final.replace(')','')
     final=final.replace("'","")
-    return render(request, 'blog/confirmation.html',{'result':final})
+    liste=final.split('-')
+    final1=traitement1.process_data1(result1)
+    final1=str(final1).replace(',',' ')
+    final1=final1.replace('(','')
+    final1=final1.replace(')','')
+    final1=final1.replace("'","")
+    liste1=final1.split('-')
+    return render(request, 'blog/confirmation.html',{'capteurs':liste, 'actionneurs':liste1})
 
 
 
