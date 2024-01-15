@@ -44,7 +44,7 @@ class TerrestreForm(forms.Form):
 
 class AquaForm(forms.Form):
     
-    choices=[('Water mill', 'Water mill'), ('Helices (water)', 'Helices (water)')]
+    choices=[('Water mill', 'Water mill'), ('airblades (water)', 'Airblades (water)')]
     
     votre_champ_radio = forms.ChoiceField(
         choices=choices,
@@ -53,7 +53,7 @@ class AquaForm(forms.Form):
 
 class AirForm(forms.Form):
     
-    choices=[('Helices (air)', 'Helices (air)'), ('Glider', 'Glider')]
+    choices=[('Airblades (air)', 'Airblades (air)'), ('Glider', 'Glider')]
         
     votre_champ_radio = forms.ChoiceField(
         choices=choices,

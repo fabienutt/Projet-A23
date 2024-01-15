@@ -95,7 +95,7 @@ def my_view(request):
         prompt=prompt2=""
         dim=data["choice_form"]["floatsaisie"]
         if data['transport_form']["type_vehicule"]=="Aquatique" :
-            prompt=data['aqua_form']['votre_champ_radio']+" Aquatic with a size of : "+str(data["choice_form"]["floatsaisie"]) + " cm "
+            prompt=data['aqua_form']['votre_champ_radio']+"  with a size of : "+str(data["choice_form"]["floatsaisie"]) + " cm "
             prompt2= f"aquatic robot chassis {10*dim}"
             
             path1=modelsgenerations.generation(getdate(),prompt)
